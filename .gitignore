@@ -3,3 +3,5 @@
 /.project
 /bin/
 /.settings/
+/pom.xml
+/owaspSecurityShepherd_scan.fpr.scan

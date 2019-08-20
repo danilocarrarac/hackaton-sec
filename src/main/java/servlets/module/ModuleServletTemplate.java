@@ -147,8 +147,7 @@ extends HttpServlet
 			PreparedStatement stmt;
 			stmt= conn.prepareStatement("SELECT * FROM tb_users WHERE username = ?");
 			stmt.setString(1, username);
-			ResultSet resultSet = stmt.executeQuery("SELECT * FROM tb_users WHERE username = ?");
-			stmt.setString(1, username);
+			ResultSet resultSet = stmt.executeQuery();
 			
 			log.debug("Opening Result Set from query");
 			for(int i = 0; resultSet.next(); i++)
