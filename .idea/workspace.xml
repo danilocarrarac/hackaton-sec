@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8a96a5b4-845e-4d7f-aa04-95798f1bcf9f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/owaspSecurityShepherd.fpr" beforeDir="false" afterPath="$PROJECT_DIR$/owaspSecurityShepherd.fpr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dbProcs/Setter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dbProcs/Setter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/module/challenge/CsrfChallengeTargetFive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/module/challenge/CsrfChallengeTargetFive.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/module/challenge/CsrfChallengeTargetSix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/module/challenge/CsrfChallengeTargetSix.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -18,20 +20,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/servlets/module/challenge/SqlInjection4.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/servlets/module/challenge/CsrfChallengeTargetFive.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="97" column="8" selection-start-line="97" selection-start-column="8" selection-end-line="97" selection-end-column="8" />
+            <state relative-caret-position="240">
+              <caret line="93" column="56" lean-forward="true" selection-start-line="93" selection-start-column="56" selection-end-line="93" selection-end-column="56" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/i18n/challenges/injection/1feccf2205b4c5ddf743630b46aece3784d61adc56498f7603ccd7cb8ae92629.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="35" selection-start-line="4" selection-start-column="35" selection-end-line="4" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/dbProcs/Setter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="282" column="54" lean-forward="true" selection-start-line="282" selection-start-column="54" selection-end-line="282" selection-end-column="54" />
+            <state relative-caret-position="564">
+              <caret line="288" column="69" selection-start-line="288" selection-start-column="69" selection-end-line="288" selection-end-column="69" />
             </state>
           </provider>
         </entry>
@@ -39,17 +50,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/servlets/admin/config/ChangeCoreDatabase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="83" column="68" selection-start-line="83" selection-start-column="68" selection-end-line="83" selection-end-column="68" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/servlets/admin/moduleManagement/CloseAllModules.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="35" column="41" selection-start-line="35" selection-start-column="41" selection-end-line="35" selection-end-column="41" />
+            <state relative-caret-position="257">
+              <caret line="82" column="21" selection-start-line="82" selection-start-column="21" selection-end-line="82" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -58,8 +60,8 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>setCoreDatabaseInfo</find>
       <find>theProperties = new String(</find>
+      <find>setCoreDatabaseInfo</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -69,6 +71,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/main/java/dbProcs/Setter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/servlets/module/challenge/CsrfChallengeTargetFive.java" />
       </list>
     </option>
   </component>
@@ -204,7 +207,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/servlets/module/challenge/SqlInjection4.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
-          <caret line="97" column="8" selection-start-line="97" selection-start-column="8" selection-end-line="97" selection-end-column="8" />
+          <caret line="103" column="16" selection-start-line="103" selection-start-column="16" selection-end-line="103" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -215,17 +218,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/i18n/challenges/injection/1feccf2205b4c5ddf743630b46aece3784d61adc56498f7603ccd7cb8ae92629.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="35" selection-start-line="4" selection-start-column="35" selection-end-line="4" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/servlets/admin/config/ChangeCoreDatabase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="83" column="68" selection-start-line="83" selection-start-column="68" selection-end-line="83" selection-end-column="68" />
+        <state relative-caret-position="257">
+          <caret line="82" column="21" selection-start-line="82" selection-start-column="21" selection-end-line="82" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/dbProcs/Setter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="282" column="54" lean-forward="true" selection-start-line="282" selection-start-column="54" selection-end-line="282" selection-end-column="54" />
+        <state relative-caret-position="564">
+          <caret line="288" column="69" selection-start-line="288" selection-start-column="69" selection-end-line="288" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/module/challenge/CsrfChallengeTargetFive.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="93" column="56" lean-forward="true" selection-start-line="93" selection-start-column="56" selection-end-line="93" selection-end-column="56" />
         </state>
       </provider>
     </entry>

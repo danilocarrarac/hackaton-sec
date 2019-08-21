@@ -9,6 +9,8 @@ import java.sql.SQLException;
 
 import org.apache.log4j.Logger;
 
+import sanitization.MD5;
+
 /**
  * Used to add information to the Database
  * <br/><br/>
@@ -283,8 +285,8 @@ public class Setter
 			writer = new DataOutputStream(new FileOutputStream(siteProperties,false));
 
 			theProperties = new String("databaseConnectionURL=core"+
-					"\ndatabaseUsername=" + userName +
-					"\ndatabasePassword=" + password);
+					"\ndatabaseUsername=" + MD5.md5Sanitize(userName) +
+					"\ndatabasePassword=" + MD5.md5Sanitize(password));
 			writer.write(theProperties.getBytes());
 			writer.close();
 			return true;

@@ -1,23 +1,22 @@
 package servlets.module.challenge;
 
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.Locale;
-import java.util.Random;
-import java.util.ResourceBundle;
+import dbProcs.Getter;
+import dbProcs.Setter;
+import org.apache.log4j.Logger;
+import utils.ShepherdLogManager;
+import utils.Validate;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
-import org.apache.log4j.Logger;
-
-import utils.ShepherdLogManager;
-import utils.Validate;
-import dbProcs.Getter;
-import dbProcs.Setter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.security.SecureRandom;
+import java.util.Date;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 /**
  * Cross Site Request Forgery Challenge Target Five - Does not return Result key
@@ -78,8 +77,9 @@ public class CsrfChallengeTargetFive extends HttpServlet
 				if(ses.getAttribute("csrfChallengeFiveNonce") == null || ses.getAttribute("csrfChallengeFiveNonce").toString().isEmpty())
 				{
 					log.debug("No CSRF Token associated with user");
-					Random random = new Random();
-					int newToken = random.nextInt(3);
+					SecureRandom random = new SecureRandom();
+					random.setSeed((new Date()).getTime());
+					Integer newToken = random.nextInt(400000000);
 					out.write(csrfGenerics.getString("target.noTokenNewToken") + " " + newToken + "<br><br>");
 					storedToken = "" + newToken;
 					ses.setAttribute("csrfChallengeFiveNonce", newToken);
@@ -113,7 +113,14 @@ public class CsrfChallengeTargetFive extends HttpServlet
 						}
 						else
 						{
-							log.error("UserId '" + plusId + "' could not be found.");
+							try {
+						  		
+						  		log.error("UserId '" + Integer.parseInt(plusId) + "' could not be found.");
+							}
+							catch (NumberFormatException nfe) {
+						  		log.info("Failed to parse plusId = " + nfe);
+							}
+							
 						}
 					}
 					else
