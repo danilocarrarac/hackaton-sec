@@ -3,6 +3,7 @@ package servlets.module.challenge;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -92,10 +93,15 @@ public class SqlInjection4 extends HttpServlet
 				
 				log.debug("Getting Connection to Database");
 				Connection conn = Database.getChallengeConnection(ApplicationRoot, "SqlChallengeFour");
-				Statement stmt = conn.createStatement();
+
+				String sqlSelectUser = "SELECT userName FROM users WHERE userName = ?";
+				PreparedStatement stmt = conn.prepareStatement(sqlSelectUser);
+				stmt.setString(1, theUserName);
+				
 				log.debug("Gathering result set");
-				ResultSet resultSet = stmt.executeQuery("SELECT userName FROM users WHERE userName = '" + theUserName + "' AND userPassword = '" + thePassword + "'");
-		
+				
+				ResultSet resultSet = stmt.executeQuery(sqlSelectUser);
+				
 				int i = 0;
 				htmlOutput = "<h2 class='title'>" + bundle.getString("response.loginResults")+ "</h2>";
 				

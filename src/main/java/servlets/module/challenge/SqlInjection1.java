@@ -51,7 +51,6 @@ public class SqlInjection1 extends HttpServlet
 	/**
 	 * This function is used to make a call to a database and process its results. The call made to the database is secured using an insufficient privilege. 
 	 * Players must overcome this filter to complete the module
-	 * @param aUserId Used to filter database results
 	 */
 	public void doPost (HttpServletRequest request, HttpServletResponse response) 
 	throws ServletException, IOException
@@ -85,11 +84,11 @@ public class SqlInjection1 extends HttpServlet
 				Connection conn = Database.getChallengeConnection(ApplicationRoot, "SqlChallengeOne");
 				PreparedStatement stmt = conn.prepareStatement("SELECT * FROM customers WHERE customerId = ?");
 				log.debug("Gathering result set");
-				
+
 				PreparedStatement prepState = conn.prepareStatement("SELECT * FROM customers WHERE customerId = ? ");
 				prepState.setString(1, aUserId);
 				ResultSet resultSet = prepState.getResultSet();
-				
+
 				int i = 0;
 				htmlOutput = "<h2 class='title'>" + bundle.getString("response.searchResults")+ "</h2>";
 				htmlOutput += "<table><tr><th>"+ bundle.getString("response.table.name") +"</th><th>"+ bundle.getString("response.table.address") +"</th><th>"+ bundle.getString("response.table.comment") +"</th></tr>";
