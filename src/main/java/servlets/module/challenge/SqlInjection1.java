@@ -82,11 +82,9 @@ public class SqlInjection1 extends HttpServlet
 				
 				log.debug("Getting Connection to Database");
 				Connection conn = Database.getChallengeConnection(ApplicationRoot, "SqlChallengeOne");
-				PreparedStatement stmt = conn.prepareStatement("SELECT * FROM customers WHERE customerId = ?");
-				log.debug("Gathering result set");
-
 				PreparedStatement prepState = conn.prepareStatement("SELECT * FROM customers WHERE customerId = ? ");
 				prepState.setString(1, aUserId);
+				log.debug("Gathering result set");
 				ResultSet resultSet = prepState.getResultSet();
 
 				int i = 0;
