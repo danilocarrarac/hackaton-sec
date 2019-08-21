@@ -1,9 +1,6 @@
 package dbProcs;
 
-import java.io.DataOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -284,7 +281,8 @@ public class Setter
 			//Update Core Schema Settings
 			siteProperties = new File(applicationRoot + "/WEB-INF/coreDatabase.properties");
 			writer = new DataOutputStream(new FileOutputStream(siteProperties,false));
-			theProperties = new String("databaseConnectionURL=core"+					
+
+			theProperties = new String("databaseConnectionURL=core"+
 					"\ndatabaseUsername=" + userName +
 					"\ndatabasePassword=" + password);
 			writer.write(theProperties.getBytes());

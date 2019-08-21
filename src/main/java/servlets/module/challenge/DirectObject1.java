@@ -21,6 +21,7 @@ import org.owasp.encoder.Encode;
 import utils.ShepherdLogManager;
 import utils.Validate;
 import dbProcs.Database;
+import sanitization.SpecialCharacterSanitize;
 
 /**
  * Insecure Direct Object Challenge Challenge One
@@ -83,18 +84,18 @@ public class DirectObject1 extends HttpServlet
 				PreparedStatement prepstmt = conn.prepareStatement("SELECT userName, privateMessage FROM users WHERE userId = ?");
 				prepstmt.setString(1, userId);
 				ResultSet resultSet = prepstmt.executeQuery();
+				SpecialCharacterSanitize sanitize = new SpecialCharacterSanitize();
 				if(resultSet.next())
 				{
 					log.debug("Found user: " + resultSet.getString(1));
 					String userName = resultSet.getString(1);
 					String privateMessage = resultSet.getString(2);
-					htmlOutput = "<h2 class='title'>" + userName + "'s " + bundle.getString("response.message") + "</h2>" +
-							"<p>" + privateMessage + "</p>";
+					htmlOutput = "<h2 class='title'>" + sanitize.htmlSanitazi(userName) + "'s " + bundle.getString("response.message") + "</h2>" +
+							"<p>" + sanitize.htmlSanitazi(privateMessage) + "</p>";
 				}
 				else
 				{
 					log.debug("No Profile Found");
-					
 					htmlOutput = "<h2 class='title'>" + bundle.getString("response.notFound") + "</h2><p>" + bundle.getString("response.notFoundMessage.1") + " '" + Encode.forHtml(userId) + "' " + bundle.getString("response.notFoundMessage.2") + "</p>";
 				}
 				log.debug("Outputting HTML");
