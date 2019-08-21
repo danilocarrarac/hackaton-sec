@@ -284,6 +284,7 @@ public class Setter
 			//Update Core Schema Settings
 			siteProperties = new File(applicationRoot + "/WEB-INF/coreDatabase.properties");
 			writer = new DataOutputStream(new FileOutputStream(siteProperties,false));
+
 			theProperties = new String("databaseConnectionURL=core"+					
 					"\ndatabaseUsername=" + userName +
 					"\ndatabasePassword=" + password);
