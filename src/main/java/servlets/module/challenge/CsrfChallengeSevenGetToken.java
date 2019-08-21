@@ -7,20 +7,17 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.Locale;
 import java.util.ResourceBundle;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import dbProcs.Database;
 import org.apache.log4j.Logger;
 import org.owasp.encoder.Encode;
-
-
 import utils.ShepherdLogManager;
 import utils.Validate;
-import dbProcs.Database;
 
 /**
  * Cross Site Request Forgery Challenge Seven - Does not return result Key
@@ -80,7 +77,7 @@ public class CsrfChallengeSevenGetToken extends HttpServlet
 				try
 				{
 					log.debug("Preparing setCsrfChallengeSevenToken call");
-					PreparedStatement callstmnt = conn.prepareStatement("SELECT csrfTokenscol FROM csrfChallengeEnumTokens.csrfTokens WHERE userId LIKE ?");
+					PreparedStatement callstmnt = conn.prepareStatement("SELECT csrfTokenscol FROM csrfChallengeEnumTokens.csrfTokens WHERE userId = ?");
 					callstmnt.setString(1, userId);
 					log.debug("Executing setCsrfChallengeSevenTokenQuery");
 					ResultSet rs = callstmnt.executeQuery();
