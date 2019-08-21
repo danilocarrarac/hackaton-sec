@@ -1,8 +1,8 @@
 package sanitization;
 
-public class SpecialCharacterSanitize {
+public class Sanitizer {
 
-	public String htmlSanitazi(String param) {
+	public static String htmlSanitaze(String param) {
 		param = param.replaceAll("[^U+0020 a-zA-Z0-9]","");
 		return param;
 	}
