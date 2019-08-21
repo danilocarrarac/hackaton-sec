@@ -86,8 +86,8 @@ public class DirectObject1 extends HttpServlet
 					log.debug("Found user: " + resultSet.getString(1));
 					String userName = resultSet.getString(1);
 					String privateMessage = resultSet.getString(2);
-					htmlOutput = "<h2 class='title'>" + Sanitizer.htmlSanitaze(userName) + "'s " + bundle.getString("response.message") + "</h2>" +
-							"<p>" + Sanitizer.htmlSanitaze(privateMessage) + "</p>";
+					htmlOutput = "<h2 class='title'>" + Sanitizer.htmlSanitize(userName) + "'s " + bundle.getString("response.message") + "</h2>" +
+							"<p>" + Sanitizer.htmlSanitize(privateMessage) + "</p>";
 				}
 				else
 				{
