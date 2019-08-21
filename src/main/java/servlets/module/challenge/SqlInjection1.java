@@ -86,12 +86,18 @@ public class SqlInjection1 extends HttpServlet
 				
 				log.debug("Getting Connection to Database");
 				Connection conn = Database.getChallengeConnection(ApplicationRoot, "SqlChallengeOne");
-				Statement stmt = conn.createStatement();
+				PreparedStatement stmt = conn.prepareStatement("SELECT * FROM customers WHERE customerId = ?");
 				log.debug("Gathering result set");
+<<<<<<< HEAD
 				
 				PreparedStatement prepState = conn.prepareStatement("SELECT * FROM customers WHERE customerId = ? ");
 				prepState.setString(1, aUserId);
 				ResultSet resultSet = prepState.getResultSet();
+=======
+
+				stmt.setString(1, aUserId);
+				ResultSet resultSet = stmt.executeQuery();
+>>>>>>> 068573a560cae159b4909e4a2cc48c16a68b9e92
 				
 				int i = 0;
 				htmlOutput = "<h2 class='title'>" + bundle.getString("response.searchResults")+ "</h2>";
