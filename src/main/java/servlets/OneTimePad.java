@@ -1,5 +1,9 @@
 package servlets;
 
+import java.io.File;
+
+import dbProcs.FileInputProperties;
+
 /**
  * One Time pad encryption for user specific keys.
  * <br/><br/>
@@ -23,8 +27,9 @@ package servlets;
  */
 public class OneTimePad {
 
-	  private static final String KEY = "SuperKalaFragalisticExpeAloDocious";
-	  
+	public static final String PATH = new File(OneTimePad.class.getResource("/challenges/OneTimePad.properties").getFile()).getAbsolutePath();
+	private static final String KEY = FileInputProperties.readfile(PATH, "encryption_key");
+
 	  /**
 	   * Encrypts the supplied string value using the default key
 	   * @param text The string that is to be encrypted
