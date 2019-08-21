@@ -3,6 +3,7 @@ package servlets.module.challenge;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -92,7 +93,10 @@ public class SqlInjection3 extends HttpServlet
 				Connection conn = Database.getChallengeConnection(ApplicationRoot, "SqlChallengeThree");
 				Statement stmt = conn.createStatement();
 				log.debug("Gathering result set");
-				ResultSet resultSet = stmt.executeQuery("SELECT customerName FROM customers WHERE customerName = '" + theUserName + "'");
+				
+				PreparedStatement prepSet = conn.prepareStatement("SELECT customerName FROM customers WHERE customerName = ? ");
+				prepSet.setString(1, theUserName);
+				ResultSet resultSet = prepSet.getResultSet();
 		
 				int i = 0;
 				htmlOutput = "<h2 class='title'>" + bundle.getString("response.searchResults")+ "</h2>";;

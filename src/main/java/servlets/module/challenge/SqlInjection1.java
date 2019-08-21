@@ -19,10 +19,9 @@ import javax.servlet.http.HttpSession;
 import org.apache.log4j.Logger;
 import org.owasp.encoder.Encode;
 
-
+import dbProcs.Database;
 import utils.ShepherdLogManager;
 import utils.Validate;
-import dbProcs.Database;
 
 /**
  * SQL Injection Challenge 1 - Does not use User specific keys
@@ -89,16 +88,23 @@ public class SqlInjection1 extends HttpServlet
 				Connection conn = Database.getChallengeConnection(ApplicationRoot, "SqlChallengeOne");
 				PreparedStatement stmt = conn.prepareStatement("SELECT * FROM customers WHERE customerId = ?");
 				log.debug("Gathering result set");
+<<<<<<< HEAD
+				
+				PreparedStatement prepState = conn.prepareStatement("SELECT * FROM customers WHERE customerId = ? ");
+				prepState.setString(1, aUserId);
+				ResultSet resultSet = prepState.getResultSet();
+=======
 
 				stmt.setString(1, aUserId);
 				ResultSet resultSet = stmt.executeQuery();
+>>>>>>> 068573a560cae159b4909e4a2cc48c16a68b9e92
 				
 				int i = 0;
 				htmlOutput = "<h2 class='title'>" + bundle.getString("response.searchResults")+ "</h2>";
 				htmlOutput += "<table><tr><th>"+ bundle.getString("response.table.name") +"</th><th>"+ bundle.getString("response.table.address") +"</th><th>"+ bundle.getString("response.table.comment") +"</th></tr>";
 				
 				log.debug("Opening Result Set from query");
-				while(resultSet.next())
+				while( resultSet.next())
 				{
 					log.debug("Adding Customer " + resultSet.getString(2));
 					htmlOutput += "<tr><td>"
