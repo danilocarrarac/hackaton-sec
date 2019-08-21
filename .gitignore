@@ -5,3 +5,5 @@
 /.settings/
 /pom.xml
 /owaspSecurityShepherd_scan.fpr.scan
+/.idea/
+/owaspSecurityShepherd.iml

@@ -7,18 +7,16 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.Locale;
 import java.util.ResourceBundle;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import dbProcs.Database;
 import org.apache.log4j.Logger;
 import org.owasp.encoder.Encode;
-
-import dbProcs.Database;
-import sanitization.SpecialCharacterSanitize;
+import sanitization.Sanitizer;
 import utils.ShepherdLogManager;
 import utils.Validate;
 
@@ -87,19 +85,18 @@ public class DirectObject2 extends HttpServlet {
 				prepstmt.setString(1, userId);
 				ResultSet resultSet = prepstmt.executeQuery();
 
-				SpecialCharacterSanitize sanitize = new SpecialCharacterSanitize();
 				if (resultSet.next()) {
 
 					log.debug("Found user: " + resultSet.getString(1));
 					String userName = resultSet.getString(1);
 					String privateMessage = resultSet.getString(2);
-					htmlOutput = "<h2 class='title'>" + sanitize.htmlSanitazi(userName) + "'s "
-							+ bundle.getString("response.message") + "</h2>" + "<p>" + privateMessage + "</p>";
+					htmlOutput = "<h2 class='title'>" + Sanitizer.htmlSanitaze(userName) + "'s "
+							+ bundle.getString("response.message") + "</h2>" + "<p>" + Sanitizer.htmlSanitaze(privateMessage)+ "</p>";
 				} else {
 					log.debug("No Profile Found");
 
 					htmlOutput = "<h2 class='title'>" + bundle.getString("response.notFound") + "</h2><p>"
-							+ bundle.getString("response.notFoundMessage.1") + " '" + Encode.forHtml(sanitize.htmlSanitazi(userId)) + "' "
+							+ bundle.getString("response.notFoundMessage.1") + " '" + Encode.forHtml(Sanitizer.htmlSanitaze(userId)) + "' "
 							+ bundle.getString("response.notFoundMessage.2") + "</p>";
 				}
 				log.debug("Outputting HTML");
