@@ -3,6 +3,7 @@ package servlets.module.challenge;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -18,10 +19,9 @@ import javax.servlet.http.HttpSession;
 import org.apache.log4j.Logger;
 import org.owasp.encoder.Encode;
 
-
+import dbProcs.Database;
 import utils.ShepherdLogManager;
 import utils.Validate;
-import dbProcs.Database;
 
 /**
  * SQL Injection Stored Procedure Challenge - Does not use user specific keys
@@ -80,8 +80,12 @@ public class SqlInjectionStoredProcedure extends HttpServlet
 				log.debug("Getting Connection to Database");
 				Connection conn = Database.getChallengeConnection(ApplicationRoot, "SqlChallengeStoredProc");
 				//CallableStatement callstmt = conn.prepareCall("CALL findUser('" + userIdentity + "');");
-				Statement stmt = conn.createStatement();
-				ResultSet resultSet = stmt.executeQuery("CALL findUser('" + userIdentity + "');");
+				
+
+				PreparedStatement prepStat = conn.prepareStatement("CALL findUser( ? );");
+				prepStat.setString(1, userIdentity);
+				ResultSet resultSet = prepStat.getResultSet();
+				
 				
 				int i = 0;
 				htmlOutput = "<h2 class='title'>" + bundle.getString("response.searchResults")+ "</h2>";
