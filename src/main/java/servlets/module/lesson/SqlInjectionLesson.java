@@ -2,10 +2,7 @@ package servlets.module.lesson;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
@@ -131,9 +128,10 @@ extends HttpServlet
 		try 
 		{
 			Connection conn = Database.getSqlInjLessonConnection(ApplicationRoot);
-			Statement stmt;
-			stmt = conn.createStatement();
-			ResultSet resultSet = stmt.executeQuery("SELECT * FROM tb_users WHERE username = '" + username + "'");
+			PreparedStatement preparedStatement = conn.prepareStatement("SELECT * FROM tb_users WHERE username = ? ");
+			preparedStatement.setString(1, username);
+			ResultSet resultSet = preparedStatement.executeQuery();
+
 			log.debug("Opening Result Set from query");
 			for(int i = 0; resultSet.next(); i++)
 			{

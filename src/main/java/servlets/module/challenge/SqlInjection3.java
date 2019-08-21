@@ -91,9 +91,9 @@ public class SqlInjection3 extends HttpServlet
 				
 				log.debug("Getting Connection to Database");
 				Connection conn = Database.getChallengeConnection(ApplicationRoot, "SqlChallengeThree");
-				Statement stmt = conn.createStatement();
+
 				log.debug("Gathering result set");
-				
+
 				PreparedStatement prepSet = conn.prepareStatement("SELECT customerName FROM customers WHERE customerName = ? ");
 				prepSet.setString(1, theUserName);
 				ResultSet resultSet = prepSet.getResultSet();
