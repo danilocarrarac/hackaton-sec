@@ -119,7 +119,9 @@ public class FeedbackSubmit extends HttpServlet
 						boolean validKey = false;
 						//Identify if solution is a user Specific key (Does it need to be decrypted?)
 						if(Getter.getModuleKeyType(ApplicationRoot, moduleId))
-							validKey = storedResult.compareTo(solutionKey) == 0;
+								validKey = storedResult.compareTo(solutionKey) == 0;
+
+
 						else
 						{
 							//User has submitted a string. Lets see if it matches a freshly computed Key
