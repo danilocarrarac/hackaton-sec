@@ -91,7 +91,7 @@ public class DirectObject2 extends HttpServlet {
 					String userName = resultSet.getString(1);
 					String privateMessage = resultSet.getString(2);
 					htmlOutput = "<h2 class='title'>" + Sanitizer.htmlSanitaze(userName) + "'s "
-							+ bundle.getString("response.message") + "</h2>" + "<p>" + privateMessage + "</p>";
+							+ bundle.getString("response.message") + "</h2>" + "<p>" + Sanitizer.htmlSanitaze(privateMessage)+ "</p>";
 				} else {
 					log.debug("No Profile Found");
 
