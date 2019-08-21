@@ -6,20 +6,17 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.Locale;
 import java.util.ResourceBundle;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import dbProcs.Database;
 import org.apache.log4j.Logger;
 import org.owasp.encoder.Encode;
-
-import dbProcs.Database;
 import utils.ShepherdLogManager;
 import utils.Validate;
 
@@ -88,16 +85,10 @@ public class SqlInjection1 extends HttpServlet
 				Connection conn = Database.getChallengeConnection(ApplicationRoot, "SqlChallengeOne");
 				PreparedStatement stmt = conn.prepareStatement("SELECT * FROM customers WHERE customerId = ?");
 				log.debug("Gathering result set");
-<<<<<<< HEAD
 				
 				PreparedStatement prepState = conn.prepareStatement("SELECT * FROM customers WHERE customerId = ? ");
 				prepState.setString(1, aUserId);
 				ResultSet resultSet = prepState.getResultSet();
-=======
-
-				stmt.setString(1, aUserId);
-				ResultSet resultSet = stmt.executeQuery();
->>>>>>> 068573a560cae159b4909e4a2cc48c16a68b9e92
 				
 				int i = 0;
 				htmlOutput = "<h2 class='title'>" + bundle.getString("response.searchResults")+ "</h2>";

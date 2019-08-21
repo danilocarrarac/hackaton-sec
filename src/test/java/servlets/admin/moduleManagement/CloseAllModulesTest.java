@@ -91,7 +91,7 @@ public class CloseAllModulesTest
 	public void testWithUserAuth()
 	{
 		String userName = "configUserTester";
-		String password = null;
+		String password = userName;
 		//Verify / Create user in DB
 		try
 		{
