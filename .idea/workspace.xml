@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8a96a5b4-845e-4d7f-aa04-95798f1bcf9f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/owaspSecurityShepherd.fpr" beforeDir="false" afterPath="$PROJECT_DIR$/owaspSecurityShepherd.fpr" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dbProcs/Setter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dbProcs/Setter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/admin/userManagement/ChangeUserPassword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/admin/userManagement/ChangeUserPassword.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/module/challenge/BrokenCrypto3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/module/challenge/BrokenCrypto3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/module/challenge/BrokenCryptoHomeMade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/module/challenge/BrokenCryptoHomeMade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/module/challenge/SqlInjection4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/module/challenge/SqlInjection4.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/module/challenge/SqlInjection7.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/module/challenge/SqlInjection7.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -34,13 +30,37 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/dbProcs/Setter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="279" column="46" lean-forward="true" selection-start-line="279" selection-start-column="46" selection-end-line="279" selection-end-column="46" />
+            <state relative-caret-position="270">
+              <caret line="282" column="54" lean-forward="true" selection-start-line="282" selection-start-column="54" selection-end-line="282" selection-end-column="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/servlets/admin/config/ChangeCoreDatabase.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="362">
+              <caret line="83" column="68" selection-start-line="83" selection-start-column="68" selection-end-line="83" selection-end-column="68" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/servlets/admin/moduleManagement/CloseAllModules.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="35" column="41" selection-start-line="35" selection-start-column="41" selection-end-line="35" selection-end-column="41" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>setCoreDatabaseInfo</find>
+      <find>theProperties = new String(</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -114,6 +134,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
@@ -187,10 +208,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/admin/moduleManagement/CloseAllModules.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="35" column="41" selection-start-line="35" selection-start-column="41" selection-end-line="35" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/admin/config/ChangeCoreDatabase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="83" column="68" selection-start-line="83" selection-start-column="68" selection-end-line="83" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/dbProcs/Setter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="279" column="46" lean-forward="true" selection-start-line="279" selection-start-column="46" selection-end-line="279" selection-end-column="46" />
+        <state relative-caret-position="270">
+          <caret line="282" column="54" lean-forward="true" selection-start-line="282" selection-start-column="54" selection-end-line="282" selection-end-column="54" />
         </state>
       </provider>
     </entry>
